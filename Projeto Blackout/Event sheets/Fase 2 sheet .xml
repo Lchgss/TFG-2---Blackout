@@ -1,0 +1,1104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fase 2 sheet </name>
+    <events>
+        <variable constant="0" name="Poder2" sid="156251185881770" static="0" type="number">1</variable>
+        <variable constant="0" name="Runas" sid="202791210624258" static="0" type="number">6</variable>
+        <variable constant="0" name="VidaBoss" sid="750867474716703" static="0" type="number">15</variable>
+        <variable constant="0" name="Lanterna" sid="969802346898133" static="0" type="number">0</variable>
+        <variable constant="0" name="VidaPlayer" sid="779625142172786" static="0" type="number">5</variable>
+        <event-group description="" sid="815662347814356" title="Movimento personagem2">
+            <sub-events>
+                <event-block sid="358762315779672">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="341061564264708" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="485169912309957" type="Jogador">
+                            <param id="0" name="Animation">&quot;CaminhaD&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="588208757565270" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="742293581084340" type="Lanterninha">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="979750856800244" type="MarcaPoder">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="973801117817495">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="549407935581671" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="299929788019962" type="Jogador">
+                            <param id="0" name="Animation">&quot;CaminhaE&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="885127399843532" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="679645166551104" type="Lanterninha">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="775911174235093" type="MarcaPoder">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="434262902044425">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="584305916938210" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="880295172134086" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="538406286029395" type="Jogador">
+                            <param id="0" name="Animation">&quot;Pulo&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="232252003627174">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="996000874437799" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="668198786958423" type="Jogador">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="474242914223486">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="628972633353584" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="129506203169013" type="Jogador">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="287810440037233" title="Jogador">
+            <sub-events>
+                <event-block sid="280303752731312">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="747607790286398" type="Player">
+                            <param id="0" name="Object">Tocha</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="464638268512018" type="System">
+                            <param id="0" name="Object to create">Luz</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Jogador.X</param>
+                            <param id="3" name="Y">Jogador.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="144512008497670">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="715847550528052" type="Player">
+                            <param id="0" name="Object">TochaBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="284331636130136" type="System">
+                            <param id="0" name="Object to create">Luz</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Jogador.X</param>
+                            <param id="3" name="Y">jogador.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="216527319927439">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="339273592540280" type="System">
+                            <param id="0" name="Variable">VidaPlayer</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="412580659886345" type="Player" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="985613366362325" title="Luz">
+            <sub-events>
+                <event-block sid="359158374412595">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="133475581831745" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="834727508552448" type="Lanterninha">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">(Player.X+150)+(Player.Y) </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="705722595891128">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="163255661998159" type="Luz">
+                            <param id="0" name="Object">runa</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="308316015934767" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="219937100860590" type="Lanterninha">
+                            <param id="0" name="Animation">&quot;Runa&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="770790345827619">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="725906662540064" type="Lanterninha">
+                            <param id="0" name="Animation">&quot;Runa&quot;</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="841860401749402" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="428658411704022" type="Lanterninha">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="269364954512531">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="988119472560549" type="Keyboard">
+                            <param id="0" name="Key">82</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="140129637969019" type="Lanterninha">
+                            <param id="0" name="Animation">&quot;Apagada&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="692456480489759">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="865300731946164" type="Lanterninha">
+                            <param id="0" name="Animation">&quot;Apagada&quot;</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="255758932636768" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="215658776218292" type="Lanterninha">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="224858919690003">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="981855197687157" type="Luz" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="471602535149887" type="Luz">
+                            <param id="0" name="Object">Jogador</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="444874724886661">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="516737436455083" type="Luz" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="881020930642900" type="System">
+                            <param id="0" name="Variable">VidaPlayer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="574436871526840" type="System">
+                            <param id="0" name="Variable">Lanterna</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="758215005074766" type="System">
+                            <param id="0" name="Object to create">LuzVida</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Jogador.X</param>
+                            <param id="3" name="Y">Jogador.Y</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="223774663893283" type="LuzVida">
+                            <param id="0" name="Object">Jogador</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="393483601870230" type="Jogador">
+                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="905445536637191">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="318060400317300" type="Luz" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="897068059830728" type="System">
+                            <param id="0" name="Variable">Lanterna</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="609367414944992" type="System">
+                            <param id="0" name="Variable">VidaPlayer</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="329813742301617">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="920728579260122" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="267520778151554" type="LuzVida">
+                            <param id="0" name="Object">Jogador</param>
+                            <param id="1" name="Image point (optional)">(Jogador.X) + (Jogador.Y+20)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="690717084269926">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="791449935516867" type="Luz" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="848648119224446" type="ShadowLight">
+                            <param id="0" name="Pin to">Luz</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="449840997622878" type="Jogador">
+                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="761957884599100" title="Teclas">
+            <sub-events>
+                <event-block sid="859823660158386">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="106228362480164" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="734789031310090" type="Ghoul">
+                            <param id="0" name="Object">Luz</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="663727464184722" type="Ghoul" />
+                    </actions>
+                </event-block>
+                <event-block sid="163504752646769">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="424749522464174" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="513792153741339" type="FleaMan">
+                            <param id="0" name="Object">Luz</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="591164247974577" type="FleaMan" />
+                    </actions>
+                </event-block>
+                <event-block sid="989704283531866">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="678373840021167" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="299394915399138" type="Fantasma">
+                            <param id="0" name="Object">Luz</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="456378863830143" type="Fantasma" />
+                    </actions>
+                </event-block>
+                <event-block sid="389397708302373">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="983804293337382" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="854663256422819" title="Inimigo">
+            <sub-events>
+                <event-block sid="416405602397316">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="956837815036611" type="Fantasma">
+                            <param id="0" name="Object">Tocha</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="295701470069582" type="Fantasma" />
+                    </actions>
+                </event-block>
+                <event-block sid="478849260645384">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="235450739303820" type="Fantasma">
+                            <param id="0" name="Object">Jogador</param>
+                        </condition>
+                        <condition id="11" name="Collisions enabled" sid="151993449415835" type="Fantasma" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="967580119947367" type="Luz" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="387449528199415" title="Inimigo 2">
+            <sub-events>
+                <event-block sid="598577649834591">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="587376963348300" type="FleaMan">
+                            <param id="0" name="Object">Jogador</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="144620315900750" type="Luz" />
+                        <action id="-9" name="Destroy" sid="566369990005971" type="FleaMan" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="637435598388253" title="Inimigo 3">
+            <sub-events>
+                <event-block sid="110736979544837">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="625525862618124" type="Ghoul">
+                            <param id="0" name="Object">Tocha</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="879844055157380" type="Ghoul" />
+                    </actions>
+                </event-block>
+                <event-block sid="512981788745168">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="247650346173293" type="Ghoul">
+                            <param id="0" name="Object">Jogador</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="135673285390140" type="Luz" />
+                        <action id="-9" name="Destroy" sid="400671013283195" type="Ghoul" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="953670262274322" title="Sistema">
+            <sub-events>
+                <event-block sid="173114215770905">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="648452203777174" type="System">
+                            <param id="0" name="Variable">Runas</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="893705011069903" type="Puzzle" />
+                    </actions>
+                </event-block>
+                <event-block sid="870922694119016">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="342893922447286" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="235221284491779" type="FleaMan">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="270308901573969">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="978630510471643" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="810164229923791" type="Luz">
+                            <param id="0" name="Angle">angle(Jogador.X, jogador.Y,Mouse.X,Mouse.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="799441984246825">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="287243489359190" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="866234597433555" type="System">
+                            <param id="0" name="Variable">Lanterna</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="425737422706030" type="System">
+                            <param id="0" name="Variable">VidaPlayer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="835190541480283" title="Portal">
+            <sub-events>
+                <event-block sid="544840107216996">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="589450856569881" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="188685344624761" type="runa">
+                            <param id="0" name="Object">Luz</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="266511723875434" type="runa" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="537998039028069" type="runa" />
+                        <action id="-11" name="Subtract from" sid="761071732432456" type="System">
+                            <param id="0" name="Variable">Runas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="965524885644888" type="Audio">
+                            <param id="0" name="Audio file">31348__erh__spark-1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="314519020482196">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="392003710185151" type="Jogador">
+                            <param id="0" name="Object">Entra</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="489975543427756" type="Player">
+                            <param id="0" name="Object">Sai</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="751929152101094" type="Audio">
+                            <param id="0" name="Audio file">234802__richerlandtv__gametinywarp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="604407266460032">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="248611747177090" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="808316528721354" type="FragmentoPortal">
+                            <param id="0" name="Object">Luz</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="507479015363373" type="FragmentoPortal">
+                            <param id="0" name="Object">Entra</param>
+                            <param id="1" name="Layer">FragmentoPortal.X</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="339196757002438" type="FragmentoPortal" />
+                    </actions>
+                </event-block>
+                <event-block sid="502015625986580">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="106885648750249" type="Jogador">
+                            <param id="0" name="Object">PortalBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="933112350083686" type="Audio">
+                            <param id="0" name="Audio file">234802__richerlandtv__gametinywarp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="522263627568851" type="Player">
+                            <param id="0" name="Object">SpawnBoss</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="945913068087874" type="SpawnBoss" />
+                    </actions>
+                </event-block>
+                <event-block sid="122291383186888">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="110454504481279" type="Luz">
+                            <param id="0" name="Object">FragmentoPortal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="344157892429106" type="FragmentoPortal">
+                            <param id="0" name="Animation">&quot;Ativo&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="804694576516824" title="Movimento inimigos">
+            <sub-events>
+                <event-block sid="477140867679749">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="241098811540350" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="406943771724370" type="FleaMan">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="727382294420754">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="114833719583120" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="790131965196969" type="Ghoul">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="105628527720360">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="328650059198516" type="Fantasma" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="709919479030431" type="Fantasma">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="392015332727056" title="Boss">
+            <sub-events>
+                <event-block sid="342426595971570">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="767632703493091" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="249719780127676" type="Boss">
+                            <param id="0" name="Object">Luz</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="832966447328239" type="System">
+                            <param id="0" name="Variable">VidaBoss</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="691401487073376" type="Audio">
+                            <param id="0" name="Audio file">shing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="599264189749167">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="807193969854090" type="System">
+                            <param id="0" name="Variable">VidaBoss</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="145668664467548" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="326096493347311" type="Boss" />
+                        <action id="0" name="Play" sid="441769882959877" type="Audio">
+                            <param id="0" name="Audio file">414072__inspectorj__dialogue-pained-yelp-loud-b</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="489561225965577">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="949449718277014" type="System">
+                            <param id="0" name="Variable">VidaBoss</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="525479047942153" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="542261692130950" type="SpawnBoss1">
+                            <param id="0" name="Object">Fantasma</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">SpawnBoss2.X + SpawnBoss2.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="377221041673036" type="SpawnBoss2">
+                            <param id="0" name="Object">FleaMan</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">SpawnBoss2.X + SpawnBoss2.Y</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="972932712794344" type="Boss">
+                            <param id="0" name="Animation">&quot;Mid&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="739264877210044" type="Audio">
+                            <param id="0" name="Audio file">barulhoMonstro</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="852116882302989">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="787363052229893" type="System">
+                            <param id="0" name="Variable">VidaBoss</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="962891483387613" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="862969391891517" type="SpawnBoss1">
+                            <param id="0" name="Object">Fantasma</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">SpawnBoss2.X + SpawnBoss2.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="160652038557503" type="SpawnBoss2">
+                            <param id="0" name="Object">FleaMan</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">SpawnBoss2.X + SpawnBoss2.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="779412029070240" type="SpawnBoss1">
+                            <param id="0" name="Object">Fantasma</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">SpawnBoss2.X + SpawnBoss2.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="198119314540594" type="SpawnBoss1">
+                            <param id="0" name="Object">Fantasma</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">SpawnBoss2.X + SpawnBoss2.Y</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="237072941455452" type="Boss">
+                            <param id="0" name="Animation">&quot;Final&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="563082023089813" type="Audio">
+                            <param id="0" name="Audio file">barulhoMonstro</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="330989356459510">
+            <conditions>
+                <condition id="4" name="On finished" sid="547971304423438" type="MarcaPoder">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="391150407073786" type="MarcaPoder">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="147350309056710">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="919077262509945" type="Jogador" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="716453498581884" type="MarcaPoder">
+                    <param id="0" name="Object">Jogador</param>
+                    <param id="1" name="Image point (optional)">(Jogador.X)+(Jogador.Y+10) </param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="337545048066343">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="229162529666713" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="367840348267053" type="System">
+                    <param id="0" name="Variable">Poder2</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="870143567906215" type="System">
+                    <param id="0" name="Variable">Poder2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="254064232228980" type="MarcaPoder" />
+                <action id="-3" name="Create object" sid="160757988590089" type="System">
+                    <param id="0" name="Object to create">LuzQ</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Jogador.X + 100</param>
+                    <param id="3" name="Y">jogador.Y</param>
+                </action>
+                <action id="4" name="Set animation" sid="430763494459610" type="Lanterninha">
+                    <param id="0" name="Animation">&quot;Apagada&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="409612012754243">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="517789607566050" type="LuzQ" />
+                <condition id="-6" name="Every X seconds" sid="279625095620606" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="699510324168515" type="LuzQ" />
+                <action id="-9" name="Destroy" sid="372041454602532" type="LuzBarreira" />
+                <action id="4" name="Set animation" sid="526029537792214" type="Lanterninha">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="483957409226759">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="800072622329055" type="Player">
+                    <param id="0" name="Object">morte</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="221341040869271" type="Player" />
+            </actions>
+        </event-block>
+        <event-block sid="600621191424011">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="750848884570290" type="FragmentoPortal">
+                    <param id="0" name="Object">Luz</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="558245575896107" type="FragmentoPortal" />
+                <condition id="-4" name="Trigger once while true" sid="979675955659923" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="821420071497098" type="Audio">
+                    <param id="0" name="Audio file">234802__richerlandtv__gametinywarp</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="633904312822237">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="453985519175677" type="Keyboard">
+                    <param id="0" name="Key">84</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="784733160641497" type="System" />
+                <action id="-21" name="Reset global variables" sid="929414008984686" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="935064820917323">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="994088105260612" type="Luz">
+                    <param id="0" name="Object">runa</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="595277912125008" type="runa" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="618014274556753" type="Audio">
+                    <param id="0" name="Audio file">shing</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-35</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="679999251096385">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="106464928952669" type="System">
+                    <param id="0" name="Variable">Poder2</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="893056891074104" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="787508510202004" type="System">
+                    <param id="0" name="Object to create">MarcaPoder</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">lANTERNA.X</param>
+                    <param id="3" name="Y">lANTERNA.Y</param>
+                </action>
+                <action id="-10" name="Add to" sid="390185840371506" type="System">
+                    <param id="0" name="Variable">Poder2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="616130380855072">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="201624413371924" type="Tocha" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="725339598681665" type="System">
+                    <param id="0" name="Object to create">LuzTocha</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">Tocha.X</param>
+                    <param id="3" name="Y">Tocha.y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="141640891506497">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="673382784385233" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="648800837775953" type="FleaMan">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="231094975896132">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="540966303931874" type="TochaBoss" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="469529642163636" type="System">
+                    <param id="0" name="Object to create">LuzTocha</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">TochaBoss.X</param>
+                    <param id="3" name="Y">TochaBoss.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="150109368276046">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="546472404301136" type="Luz">
+                    <param id="0" name="Object">Puzzle</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="728456180193545" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="430636865214281" type="runa">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="292170075265566">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="520692229410300" type="LuzQ" />
+                <condition id="-4" name="Trigger once while true" sid="710652588494521" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="792158295165094" type="System">
+                    <param id="0" name="Object to create">LuzBarreira</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">LuzQ.X</param>
+                    <param id="3" name="Y">LuzQ.Y</param>
+                </action>
+                <action id="0" name="Play" sid="404942664531722" type="Audio">
+                    <param id="0" name="Audio file">luzQ</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="732067068342171">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="458315734650891" type="LuzQ" />
+                <condition id="-4" name="Trigger once while true" sid="797363637042404" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="767696181304477" type="Audio">
+                    <param id="0" name="Audio file">relogio</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="888377098043568">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="873890045987740" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="433254166238829" type="System">
+                    <param id="0" name="Object to create">Sprite4</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Jogador.X</param>
+                    <param id="3" name="Y">Jogador.Y</param>
+                </action>
+                <action id="0" name="Play" sid="446005254488191" type="Audio">
+                    <param id="0" name="Audio file">173126__replix__death-sound-male</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="385836482336962" type="Lanterninha" />
+            </actions>
+        </event-block>
+        <event-block sid="438023995221019">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="427439885585925" type="Luz" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="925462165701487" type="Audio">
+                    <param id="0" name="Audio file">235519__ceberation__heavy-breathing</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="580946766676570">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="527353576121906" type="System">
+                    <param id="0" name="Variable">Runas</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="372838583267621" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="497202704533867" type="SpawnMid1">
+                    <param id="0" name="Object">Ghoul</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid1.X + SpawnMid1.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="524902959772595" type="SpawnMid2">
+                    <param id="0" name="Object">Fantasma</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid2.X + SpawnMid2.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="913582823676972">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="323206163432590" type="System">
+                    <param id="0" name="Variable">Runas</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="723783158265683" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="723403197303147" type="SpawnMid1">
+                    <param id="0" name="Object">Ghoul</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid1.X + SpawnMid1.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="453426979959539" type="SpawnMid2">
+                    <param id="0" name="Object">Fantasma</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid2.X + SpawnMid2.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="959486979068096" type="SpawnMid1">
+                    <param id="0" name="Object">Ghoul</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid1.X + SpawnMid1.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="954501259888137" type="SpawnMid2">
+                    <param id="0" name="Object">Fantasma</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid2.X + SpawnMid2.Y</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="825453019226170" type="SpawnMid2">
+                    <param id="0" name="Object">Fantasma</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">SpawnMid2.X + SpawnMid2.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="106093199060543">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="460358664670130" type="Fantasma" />
+                <condition id="-4" name="Trigger once while true" sid="582511584328392" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="675816818067988" type="Audio">
+                    <param id="0" name="Audio file">fantasma</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="160467008192293">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="410299770048774" type="Ghoul" />
+                <condition id="-4" name="Trigger once while true" sid="546667577708385" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="239192341389735" type="Audio">
+                    <param id="0" name="Audio file">ghoul</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="587381193420592">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="113628547723621" type="runa" />
+                <condition id="-4" name="Trigger once while true" sid="119363161350371" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="384053963073835" type="Audio">
+                    <param id="0" name="Audio file">shing</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="135000327374622">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="660571261514619" type="Player">
+                    <param id="0" name="Object">Sprite13</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="752993138196210" type="Luz" />
+                <action id="0" name="Play" sid="436969312633397" type="Audio">
+                    <param id="0" name="Audio file">394436__inspectorj__bamboo-swing-b2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

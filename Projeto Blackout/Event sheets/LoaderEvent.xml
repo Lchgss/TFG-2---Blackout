@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LoaderEvent</name>
+    <events>
+        <event-block sid="275584839154273">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="401218538476474" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="520587793214409" type="LoadingFont">
+                    <param id="0" name="Text">round(loadingprogress*100)&amp;&quot;%&quot;</param>
+                </action>
+                <action id="-5" name="Set width" sid="154255139876526" type="LoadingBar">
+                    <param id="0" name="Width">round(loadingprogress*792)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="735997282075665">
+            <conditions>
+                <condition id="-25" name="On loader layout complete" sid="688909584526937" type="System" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="596360996052461" type="System">
+                    <param id="0" name="Layout">&quot;Menu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

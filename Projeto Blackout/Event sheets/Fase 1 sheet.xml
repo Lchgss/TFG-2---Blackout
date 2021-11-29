@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fase 1 sheet</name>
+    <events>
+        <variable constant="0" name="Poder" sid="832650576316467" static="0" type="number">0</variable>
+        <variable constant="0" name="BocasChaves" sid="911735421875819" static="0" type="number">5</variable>
+        <variable constant="0" name="Bocas" sid="193077968877171" static="0" type="number">1</variable>
+        <event-group description="" sid="276428096327251" title="Movimento personagem">
+            <sub-events>
+                <event-block sid="709061365162675">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="782830319364325" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="567046729567751" type="Jogador">
+                            <param id="0" name="Animation">&quot;CaminhaD&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="759778664788519" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="326980119603776">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="672178234250166" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="881890050715745" type="Jogador">
+                            <param id="0" name="Animation">&quot;CaminhaE&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="860566808615575" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="202851617220005">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="342131937666497" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="529201035577738" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="785307612634625" type="Jogador">
+                            <param id="0" name="Animation">&quot;Pulo&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="202713541286366">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="938196315537186" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="187685326666726" type="Jogador">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="683005047362956">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="967006686180948" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="750966002432025" type="Interruptor">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="219807306012786" type="Lampadas" />
+                <action id="4" name="Set animation" sid="773339916472252" type="saida">
+                    <param id="0" name="Animation">&quot;Aberta&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="188279278599577">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="920963894241955" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="511668720730390" type="Luz">
+                    <param id="0" name="Object">Sprite10</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="914429773055624" type="Sprite10">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="461608981598787" type="Sprite10">
+                    <param id="0" name="Animation">&quot;Abre&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="778936540984374" type="Sprite11">
+                    <param id="0" name="Animation">&quot;Abrindo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Solid" id="0" name="Set enabled" sid="369060515195194" type="Sprite11">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="0" name="Play" sid="435129048570891" type="Audio">
+                    <param id="0" name="Audio file">404068__swordofkings128__backyard-gate-open</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="598453871214155">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="188825583064486" type="saida">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="112549483946463" type="saida">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="917768887094854" type="Player">
+                    <param id="0" name="Object">saida1</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="0" name="Play" sid="571918876628051" type="Audio">
+                    <param id="0" name="Audio file">588718__collierhs-colinlib__elevator-ding</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="251621741369449">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="461040089044934" type="Sprite22">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="368012629368303" type="Sprite22">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="412133521757733" type="Audio">
+                    <param id="0" name="Audio file">588718__collierhs-colinlib__elevator-ding</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="162124783383958" type="Player">
+                    <param id="0" name="Object">final</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="733972592223950">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="662299725627297" type="Player">
+                    <param id="0" name="Object">lANTERNA</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="395654572767816" type="lANTERNA">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="756711071583914" type="LuzLanterna" />
+                <action id="-3" name="Create object" sid="723324372046684" type="System">
+                    <param id="0" name="Object to create">MarcaPoder</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">lANTERNA.X</param>
+                    <param id="3" name="Y">lANTERNA.Y</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="149658275398174" type="lANTERNA">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">((Player.X)+(Player.Y+10))</param>
+                </action>
+                <action id="-9" name="Set value" sid="363101220004725" type="System">
+                    <param id="0" name="Variable">Poder</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="641676874656863">
+            <conditions>
+                <condition id="2" name="Is playing" sid="760669802090123" type="lANTERNA">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="543019004351789" type="lANTERNA">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">(Player.X)+(Player.Y+10) </param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="383282714946545">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="569821041734553" type="Player">
+                    <param id="0" name="Object">fimTutorial</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="566933701153291" type="System">
+                    <param id="0" name="Layout">Fase 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="855626329179880">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="799685731745256" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="443643763777738" type="Jogador">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">(Player.X+10)+(Player.Y-100) </param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="449221906664826">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="308979366020701" type="Keyboard">
+                    <param id="0" name="Key">84</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="176240502931330" type="System" />
+                <action id="-21" name="Reset global variables" sid="187885644058228" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="568750650844524">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="216258057329667" type="lANTERNA" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="843232809976728" type="LuzLanterna">
+                    <param id="0" name="Object">lANTERNA</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="753821432957727">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="275629103010743" type="LuzVida" />
+                <condition id="-1" name="Every tick" sid="246916945225925" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="782402808775607" type="LuzVida">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="605092524487607">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="617821850252624" type="LuzLanterna" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="497935586646914" type="LuzVida">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="772770411285530">
+            <conditions>
+                <condition id="2" name="Is playing" sid="548850256867143" type="lANTERNA">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="999692910638600" type="Jogador">
+                    <param id="0" name="Animation">&quot;CaminhaD&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="470570117126349" type="lANTERNA">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="432850205271296" type="MarcaPoder">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="626705150396554">
+            <conditions>
+                <condition id="2" name="Is playing" sid="585634355108019" type="lANTERNA">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="697285478006749" type="Jogador">
+                    <param id="0" name="Animation">&quot;CaminhaE&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="633898102821473" type="lANTERNA">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="884978706205583" type="MarcaPoder">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="343367281262489">
+            <conditions>
+                <condition id="2" name="Is playing" sid="927706598841191" type="lANTERNA">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="644155360128967" type="System">
+                    <param id="0" name="Object to create">Luz</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">Player.X</param>
+                    <param id="3" name="Y">player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="857468604970036">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="920548058526623" type="Luz" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="723947696478719" type="Luz">
+                    <param id="0" name="Object">Jogador</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="485863511026939" type="Luz">
+                    <param id="0" name="Angle">angle(Jogador.X, jogador.Y,Mouse.X,Mouse.Y)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="973313959588140">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="145900408622637" type="Player">
+                    <param id="0" name="Object">Interruptor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="995344531430484" type="Audio">
+                    <param id="0" name="Audio file">166129__deleted-user-2104797__huh-male</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">30</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="588456800163998">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="368132474715177" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="827286398892368" type="Luz">
+                    <param id="0" name="Object">Sprite22</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="141054691741929" type="Sprite22">
+                    <param id="0" name="Animation">&quot;Abrindo&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="599276190532802">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="355127412555075" type="MarcaPoder" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="103785945844788" type="MarcaPoder">
+                    <param id="0" name="X">lANTERNA.X</param>
+                    <param id="1" name="Y">lANTERNA.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="652668344281469">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="873577773226988" type="Sprite24">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="997821068632127" type="System">
+                    <param id="0" name="Variable">Bocas</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="951924393169056" type="Bocas">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Play" sid="394664269530834" type="Audio">
+                    <param id="0" name="Audio file">235166__reitanna__giggle3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="787469139710764" type="System">
+                    <param id="0" name="Variable">Bocas</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="644819682506686">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="134409764261056" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="513623594629401" type="Luz">
+                    <param id="0" name="Object">Bocas</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="514068106773845" type="Bocas" />
+                <action id="-11" name="Subtract from" sid="965797442134227" type="System">
+                    <param id="0" name="Variable">BocasChaves</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Play" sid="420208647794748" type="Audio">
+                    <param id="0" name="Audio file">235166__reitanna__giggle3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="111260175032355">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="430775135289676" type="System">
+                    <param id="0" name="Variable">BocasChaves</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="738229676652361" type="Sprite23" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="489523822048436" type="Sprite23" />
+                <action id="0" name="Play" sid="153774495250387" type="Audio">
+                    <param id="0" name="Audio file">414072__inspectorj__dialogue-pained-yelp-loud-b</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="853291677147493">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="995143580721289" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="160903082266365" type="Luz">
+                    <param id="0" name="Object">Sprite33</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="897673406436725" type="MarcaPoder" />
+                <action id="-9" name="Destroy" sid="991266037198997" type="Sprite33" />
+            </actions>
+        </event-block>
+        <event-block sid="329836739735415">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="214207381031152" type="Sprite33" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="691354550186186" type="System">
+                    <param id="0" name="Object to create">Sprite36</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Sprite33.X</param>
+                    <param id="3" name="Y">Sprite33.Y</param>
+                </action>
+                <action id="-9" name="Destroy" sid="227632459808086" type="Sprite33" />
+                <action id="-15" name="Set visible" sid="678257479877317" type="Sprite34">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="597745982356073">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="629608482294570" type="Sprite36" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="766643151741273" type="Sprite36">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="596185527915823">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="285027521436214" type="Sprite36">
+                    <param id="0" name="Object">fimTutorial</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="753798217402179" type="Sprite36" />
+                <action id="0" name="Play" sid="100614182374074" type="Audio">
+                    <param id="0" name="Audio file">234802__richerlandtv__gametinywarp</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="755117083617084">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="586012668041398" type="System">
+                    <param id="0" name="Variable">Poder</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="235083725211088" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="532091962506493" type="System">
+                    <param id="0" name="Object to create">MarcaPoder</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">lANTERNA.X</param>
+                    <param id="3" name="Y">lANTERNA.Y</param>
+                </action>
+                <action id="-9" name="Set value" sid="900301531185578" type="System">
+                    <param id="0" name="Variable">Poder</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="542341520027816">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="429731670959036" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="429694452361613" type="System">
+                    <param id="0" name="Variable">Poder</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="740898758521311" type="System">
+                    <param id="0" name="Variable">Poder</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="507498981372563" type="MarcaPoder" />
+                <action id="-3" name="Create object" sid="729326224879357" type="System">
+                    <param id="0" name="Object to create">LuzQ</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Jogador.X + 100</param>
+                    <param id="3" name="Y">jogador.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="602982069673063">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="594874267941782" type="LuzQ" />
+                <condition id="-6" name="Every X seconds" sid="587711690340644" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="677010795669583" type="LuzQ" />
+                <action id="-9" name="Destroy" sid="457715457625510" type="LuzBarreira" />
+                <action id="4" name="Set animation" sid="220962170521953" type="lANTERNA">
+                    <param id="0" name="Animation">&quot;Acesa&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="642915161669935">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="197836711106804" type="System">
+                    <param id="0" name="Variable">Poder</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="902398921625417" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="919374602694876" type="System">
+                    <param id="0" name="Object to create">MarcaPoder</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">lANTERNA.X</param>
+                    <param id="3" name="Y">lANTERNA.Y</param>
+                </action>
+                <action id="-10" name="Add to" sid="997584820901655" type="System">
+                    <param id="0" name="Variable">Poder2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="590296946349781">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="560510835416197" type="LuzQ" />
+                <condition id="-4" name="Trigger once while true" sid="736965902993050" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="911197836873250" type="System">
+                    <param id="0" name="Object to create">LuzBarreira</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">LuzQ.X</param>
+                    <param id="3" name="Y">LuzQ.Y</param>
+                </action>
+                <action id="0" name="Play" sid="945065111408749" type="Audio">
+                    <param id="0" name="Audio file">luzQ</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="222781575558373">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="517768832306828" type="LuzQ" />
+                <condition id="-4" name="Trigger once while true" sid="974920560447821" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="205833526773422" type="Audio">
+                    <param id="0" name="Audio file">relogio</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="245386326006058">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="362362746501581" type="Sprite22">
+                    <param id="0" name="Object">Luz</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="258094682976552" type="Audio">
+                    <param id="0" name="Audio file">560012__vonkrapfamily__remixed-static</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-30</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="485721009662200">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="998435032732784" type="Luz">
+                    <param id="0" name="Object">Bocas</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="156668980211330" type="System" />
+                <condition id="-9" name="Is visible" sid="246294752211178" type="Bocas" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="355397516230532" type="Audio">
+                    <param id="0" name="Audio file">235166__reitanna__giggle3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="992302742489465">
+            <conditions>
+                <condition id="2" name="Is playing" sid="575422493641441" type="Sprite10">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="532307586982787" type="Luz">
+                    <param id="0" name="Object">Sprite10</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="483551810541638" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="505999107826411" type="Audio">
+                    <param id="0" name="Audio file">170159__timgormly__8-bit-shimmer</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="792988490354110">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="680626785395944" type="Player">
+                    <param id="0" name="Object">Interruptor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="610713889649257" type="System">
+                    <param id="0" name="Object to create">Text2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Interruptor.X</param>
+                    <param id="3" name="Y">Interruptor.Y -40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="597732960189749">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="796009198955270" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="664878725468140" type="Text2" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="538052927691223" type="Text2" />
+            </actions>
+        </event-block>
+        <event-block sid="488027376399616">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="336752865922804" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="333469864719357" type="Player">
+                    <param id="0" name="Object">Sprite41</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="879461160217669" type="Sprite41">
+                    <param id="0" name="Animation">&quot;Acendida&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="205636277593544">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="608363681647232" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="611999291105367" type="Player">
+                    <param id="0" name="Animation">&quot;Acendida&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="960600424895458" type="Sprite41">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="843841622591014">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="523371111172375" type="Player">
+                    <param id="0" name="Object">Sprite41</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="340077000794790" type="System">
+                    <param id="0" name="Object to create">Text3</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Sprite41.X</param>
+                    <param id="3" name="Y">Sprite41.Y -20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="601191391270467">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="890709530996180" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="538124927721601" type="Text3" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="617509291368499" type="Text3" />
+            </actions>
+        </event-block>
+        <event-block sid="631267214516953">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="819111830222266" type="Sprite18" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="303566385281723" type="System">
+                    <param id="0" name="Object to create">Sprite14</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">sprite18.X</param>
+                    <param id="3" name="Y">Sprite18.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,3 @@
+Para jogar, entre no link: https://lchg.itch.io/blackout
+O projeto na pasta zipada foi convertido para Scirra.
+A pasta de arquivos têm o projeto do Construct 2.
